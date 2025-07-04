@@ -31,8 +31,8 @@ The site is built purely with HTML5 and CSS3, following modern design practices 
 ### 🔹 Home Page
 ![Home](screenshots/homepage.png)
 
-### 🔹 Events Page
-![Events](screenshots/members.png)
+### 🔹 Members Page
+![Members](screenshots/members.png)
 
 ### 🔹 Gallery Modal
 ![Gallery](screenshots/gallery.png)
@@ -41,4 +41,8 @@ The site is built purely with HTML5 and CSS3, following modern design practices 
 
 ## 🚀 How to Use / Clone This Repo
 
-### 1. Clone the Repository
+You can clone this repository to your local machine using either method:
+
+### 🔹 GitHub CLI
+```bash
+gh repo clone anant8521/college-club
