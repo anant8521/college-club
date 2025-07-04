@@ -45,4 +45,5 @@ You can clone this repository to your local machine using either method:
 
 ### 🔹 GitHub CLI
 ```bash
-gh repo clone anant8521/college-club
+git clone https://github.com/anant8521/college-club.git
+
