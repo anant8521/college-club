@@ -23,6 +23,8 @@ The site is built purely with HTML5 and CSS3, following modern design practices 
 - 💻 **Fully Responsive** – Optimized for desktop, tablet, and mobile views 
 
 ---
+# See it Live
+Live using github https://anant8521.github.io/college-club/
 
 ## 📷 Screenshots
 
