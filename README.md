@@ -19,10 +19,8 @@ The site is built purely with HTML5 and CSS3, following modern design practices 
 - 🎉 **Events Page** – Details of Past & Upcoming Events  
 - 📸 **Gallery** – Event highlights with modal image preview  
 - 🙋 **Members Section** – Member profiles with social links  
-- ✉️ **Contact Page** – Contact form styled but non-functional (frontend only)  
-- 💡 **Custom Colors and Icons** – Brand-focused palette and clean typography  
-- 💻 **Fully Responsive** – Optimized for desktop, tablet, and mobile views  
-- 🔁 **Hover Animations** – Subtle animations on cards, buttons, and images  
+- ✉️ **Contact Page** – Contact form styled but non-functional (frontend only)   
+- 💻 **Fully Responsive** – Optimized for desktop, tablet, and mobile views 
 
 ---
 
