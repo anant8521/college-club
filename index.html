@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignite Innovators - Home</title>
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            /* Light grey background */
+            color: #333;
+        }
+
+        /* Custom color palette */
+        .bg-primary-dark {
+            background-color: #4A0E4E;
+        }
+
+        /* Deep Purple */
+        .text-primary-dark {
+            color: #4A0E4E;
+        }
+
+        .bg-accent-light {
+            background-color: #FFA500;
+        }
+
+        /* Bright Orange */
+        .text-accent-light {
+            color: #FFA500;
+        }
+
+        .bg-secondary-light {
+            background-color: #FEE715;
+        }
+
+        /* Vibrant Yellow */
+        .text-secondary-light {
+            color: #FEE715;
+        }
+
+        .bg-tertiary-blue {
+            background-color: #007bff;
+        }
+
+        /* A bright blue for contrast */
+
+        /* Enthusiastic effects and animations */
+        .hero-section {
+            background: linear-gradient(135deg, #4A0E4E 0%, #7B247F 100%);
+            /* Purple gradient */
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 165, 0, 0.1);
+            /* Orange blob */
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: moveBlob1 15s infinite alternate ease-in-out;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 250px;
+            height: 250px;
+            background-color: rgba(254, 231, 21, 0.15);
+            /* Yellow blob */
+            border-radius: 50%;
+            filter: blur(90px);
+            animation: moveBlob2 18s infinite alternate ease-in-out;
+        }
+
+        @keyframes moveBlob1 {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(100px, 50px) scale(1.1);
+            }
+
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+        }
+
+        @keyframes moveBlob2 {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(-80px, -60px) scale(1.05);
+            }
+
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 10;
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn-custom {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            margin-top: 2rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            border-radius: 9999px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease-in-out;
+            background: linear-gradient(45deg, #FFA500, #FEE715);
+            color: #4A0E4E;
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(255, 165, 0, 0.4);
+        }
+
+        .section-heading {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-top: 4rem;
+            margin-bottom: 3rem;
+            color: #4A0E4E;
+            position: relative;
+        }
+
+        .section-heading::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 5px;
+            background-color: #FFA500;
+            border-radius: 5px;
+        }
+
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .btn-custom {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .section-heading {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-f0f2f5">
+
+    <!-- Navbar -->
+    <nav class="bg-primary-dark shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 text-white font-bold text-2xl rounded-lg p-2">
+                        Ignite Innovators(Prototype)
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html"
+                            class="text-accent-light hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out">Home</a>
+                        <a href="about.html"
+                            class="text-gray-300 hover:text-accent-light hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out">About</a>
+                        <a href="events.html"
+                            class="text-gray-300 hover:text-accent-light hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out">Events</a>
+                        <a href="members.html"
+                            class="text-gray-300 hover:text-accent-light hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out">Members</a>
+                        <a href="gallery.html"
+                            class="text-gray-300 hover:text-accent-light hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out">Gallery</a>
+                        <a href="contact.html"
+                            class="text-gray-300 hover:text-accent-light hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <!-- Mobile menu button -->
+                    <button type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                        aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon when menu is closed. -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- Icon when menu is open. -->
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+                    aria-current="page">Home</a>
+                <a href="about.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="events.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Events</a>
+                <a href="members.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Members</a>
+                <a href="gallery.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Gallery</a>
+                <a href="contact.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1 class="text-6xl md:text-7xl font-extrabold leading-tight mb-4 tracking-tight">
+                Ignite Your Potential with <span class="text-accent-light">Ignite Innovators</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                Where ideas spark, creativity flourishes, and innovation takes flight. Join our vibrant community!
+            </p>
+            <a href="about.html" class="btn-custom">Discover Our Story</a>
+        </div>
+    </header>
+
+    <!-- About Section Preview -->
+    <section class="py-16 bg-white rounded-lg shadow-xl m-8">
+        <h2 class="section-heading">Who We Are</h2>
+        <div class="container mx-auto px-4 md:px-8 text-center max-w-4xl">
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                Ignite Innovators is a dynamic college club dedicated to fostering creativity, collaboration, and
+                cutting-edge innovation among students. We believe in empowering the next generation of thinkers,
+                creators, and problem-solvers.<br>
+                This is a static front-end prototype for a college club website, designed to showcase the layout,
+                structure, and UI of the final product.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                Through a series of engaging workshops, exciting projects, and impactful events, we provide a platform
+                for students from all disciplines to explore new technologies, develop practical skills, and build a
+                network of like-minded individuals.
+            </p>
+            <a href="about.html" class="btn-custom mt-10">Learn More About Us</a>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-20 bg-primary-dark text-white text-center rounded-lg shadow-xl m-8">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Make an Impact?</h2>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">Join Ignite Innovators and transform your ideas into reality!
+            </p>
+            <a href="contact.html" class="btn-custom bg-secondary-light text-primary-dark">Get Involved Today!</a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-300 py-8 mt-12 rounded-t-lg">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Ignite Innovators. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="hover:text-accent-light transition duration-300">Facebook</a>
+                <a href="#" class="hover:text-accent-light transition duration-300">Twitter</a>
+                <a href="#" class="hover:text-accent-light transition duration-300">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script>
+        // Mobile menu toggle functionality
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

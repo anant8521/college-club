@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignite Innovators - Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            /* Light grey background */
+            color: #333;
+        }
+
+        .bg-primary-dark {
+            background-color: #4A0E4E;
+        }
+
+        /* Deep Purple */
+        .text-primary-dark {
+            color: #4A0E4E;
+        }
+
+        .bg-accent-light {
+            background-color: #FFA500;
+        }
+
+        /* Bright Orange */
+        .text-accent-light {
+            color: #FFA500;
+        }
+
+        .bg-secondary-light {
+            background-color: #FEE715;
+        }
+
+        /* Vibrant Yellow */
+        .text-secondary-light {
+            color: #FEE715;
+        }
+
+        .section-heading {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-top: 4rem;
+            margin-bottom: 3rem;
+            color: #4A0E4E;
+            position: relative;
+        }
+
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 5px;
+            background-color: #FFA500;
+            border-radius: 5px;
+        }
+
+        .gallery-grid img {
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            transform: translateZ(0);
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.02);
+            border-color: #FFA500;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* Modal styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeInModal 0.3s ease-out;
+        }
+
+        @keyframes fadeInModal {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+            animation: zoomIn 0.3s ease-out;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-content,
+        #caption {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: #FFA500;
+            /* Orange on hover */
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .section-heading {
+                font-size: 3rem;
+            }
+
+            .modal-content {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-f0f2f5">
+
+    <!-- Navbar -->
+    <nav class="bg-primary-dark shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 text-white font-bold text-2xl rounded-lg p-2">
+                        Ignite Innovators
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-accent-light hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out">Home</a>
+                        <a href="about.html"
+                            class="text-gray-300 hover:text-accent-light hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out">About</a>
+                        <a href="events.html"
+                            class="text-gray-300 hover:text-accent-light hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out">Events</a>
+                        <a href="members.html"
+                            class="text-gray-300 hover:text-accent-light hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out">Members</a>
+                        <a href="gallery.html"
+                            class="text-accent-light hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out"
+                            aria-current="page">Gallery</a>
+                        <a href="contact.html"
+                            class="text-gray-300 hover:text-accent-light hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <!-- Mobile menu button -->
+                    <button type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                        aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon when menu is closed. -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- Icon when menu is open. -->
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="about.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="events.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Events</a>
+                <a href="members.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Members</a>
+                <a href="gallery.html" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+                    aria-current="page">Gallery</a>
+                <a href="contact.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8 md:py-16">
+        <h1 class="section-heading">Our <span class="text-accent-light">Moments & Memories</span></h1>
+
+        <section class="my-12">
+            <h2 class="text-4xl font-bold text-center mb-10 text-primary-dark">Event Highlights Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 gallery-grid">
+                <!-- Gallery Item 1 -->
+                <img src="https://placehold.co/600x400/4A0E4E/FEE715?text=Hackathon+Winner"
+                    alt="Hackathon winners celebration" loading="lazy" class="w-full h-48 object-cover">
+                <!-- Gallery Item 2 -->
+                <img src="https://placehold.co/600x400/FFA500/4A0E4E?text=Workshop+Session"
+                    alt="Interactive workshop session" loading="lazy" class="w-full h-48 object-cover">
+                <!-- Gallery Item 3 -->
+                <img src="https://placehold.co/600x400/FEE715/4A0E4E?text=Guest+Speaker"
+                    alt="Guest speaker addressing audience" loading="lazy" class="w-full h-48 object-cover">
+                <!-- Gallery Item 4 -->
+                <img src="https://placehold.co/600x400/7B247F/FEE715?text=Team+Brainstorm"
+                    alt="Team brainstorming session" loading="lazy" class="w-full h-48 object-cover">
+                <!-- Gallery Item 5 -->
+                <img src="https://placehold.co/600x400/FFDDC1/4A0E4E?text=Project+Showcase"
+                    alt="Student project showcase" loading="lazy" class="w-full h-48 object-cover">
+                <!-- Gallery Item 6 -->
+                <img src="https://placehold.co/600x400/FFB347/4A0E4E?text=Club+Meetup" alt="Casual club meetup"
+                    loading="lazy" class="w-full h-48 object-cover">
+                <!-- Gallery Item 7 -->
+                <img src="https://placehold.co/600x400/C8A2C8/FEE715?text=Coding+Session" alt="Members coding together"
+                    loading="lazy" class="w-full h-48 object-cover">
+                <!-- Gallery Item 8 -->
+                <img src="https://placehold.co/600x400/FF8C00/4A0E4E?text=Awards+Ceremony" alt="Awards ceremony"
+                    loading="lazy" class="w-full h-48 object-cover">
+                <!-- Add more images as needed -->
+            </div>
+        </section>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <span class="close-button">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-8 mt-12 rounded-t-lg">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Ignite Innovators. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="hover:text-accent-light transition duration-300">Facebook</a>
+                <a href="#" class="hover:text-accent-light transition duration-300">Twitter</a>
+                <a href="#" class="hover:text-accent-light transition duration-300">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script>
+        // Mobile menu toggle functionality
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.querySelectorAll(".gallery-grid img");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        img.forEach(item => {
+            item.addEventListener('click', function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            });
+        });
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close-button")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Close modal when clicking outside the image
+        modal.addEventListener('click', function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+</body>
+
+</html>

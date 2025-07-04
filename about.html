@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignite Innovators - About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            /* Light grey background */
+            color: #333;
+        }
+
+        .bg-primary-dark {
+            background-color: #4A0E4E;
+        }
+
+        /* Deep Purple */
+        .text-primary-dark {
+            color: #4A0E4E;
+        }
+
+        .bg-accent-light {
+            background-color: #FFA500;
+        }
+
+        /* Bright Orange */
+        .text-accent-light {
+            color: #FFA500;
+        }
+
+        .bg-secondary-light {
+            background-color: #FEE715;
+        }
+
+        /* Vibrant Yellow */
+        .text-secondary-light {
+            color: #FEE715;
+        }
+
+        .section-heading {
+            font-size: 3rem;
+            font-weight: 800;
+            text-align: center;
+            margin-top: 4rem;
+            margin-bottom: 3rem;
+            color: #4A0E4E;
+            position: relative;
+
+        }
+
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 5px;
+            background-color: #FFA500;
+            border-radius: 5px;
+        }
+
+        .about-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.5s, box-shadow 0.5s;
+            transform: translateZ(0);
+            border-bottom: 5px solid #FFA500;
+        }
+
+        .about-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .about-card h3 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #4A0E4E;
+        }
+
+        .about-card p {
+            font-size: 1.125rem;
+            color: #4B5563;
+            line-height: 1.75rem;
+        }
+
+
+        @media (max-width: 768px) {
+            .section-heading {
+                font-size: 3rem;
+            }
+
+            .about-card {
+                padding: 1.5rem;
+            }
+
+            .about-card h3 {
+                font-size: 2rem;
+            }
+
+            .about-card p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-f0f2f5">
+
+    <!-- Navbar -->
+    <nav class="bg-primary-dark shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 text-white font-bold text-2xl rounded-lg p-2">
+                        Ignite Innovators
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-accent-light hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out">Home</a>
+                        <a href="about.html"
+                            class="text-accent-light hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out"
+                            aria-current="page">About</a>
+                        <a href="events.html"
+                            class="text-gray-300 hover:text-accent-light hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out">Events</a>
+                        <a href="members.html"
+                            class="text-gray-300 hover:text-accent-light hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out">Members</a>
+                        <a href="gallery.html"
+                            class="text-gray-300 hover:text-accent-light hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out">Gallery</a>
+                        <a href="contact.html"
+                            class="text-gray-300 hover:text-accent-light hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <!-- Mobile menu button -->
+                    <button type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                        aria-controls="mobile-menu" aria-expanded="false" id="mobile-menu-button">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon when menu is closed. -->
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <!-- Icon when menu is open. -->
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="about.html" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+                    aria-current="page">About</a>
+                <a href="events.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Events</a>
+                <a href="members.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Members</a>
+                <a href="gallery.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Gallery</a>
+                <a href="contact.html"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8 md:py-16">
+        <h1 class="section-heading">About <span class="text-accent-light">Ignite Innovators</span></h1>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+            <div class="about-card">
+                <h3>Our Mission</h3>
+                <p>
+                    To cultivate a vibrant ecosystem of innovation and learning, empowering students to transform their
+                    groundbreaking ideas into tangible solutions that address real-world challenges. We strive to foster
+                    critical thinking, collaboration, and a passion for continuous discovery.
+                </p>
+            </div>
+            <div class="about-card">
+                <h3>Our Vision</h3>
+                <p>
+                    To be the leading hub for student innovation and technological advancement within the college,
+                    recognized for producing highly skilled, creative, and impactful individuals who contribute
+                    positively to society.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-white p-8 rounded-xl shadow-lg my-12">
+            <h3 class="text-3xl font-bold mb-6 text-primary-dark text-center">Our History</h3>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                Ignite Innovators was founded in 2018 by a group of enthusiastic students who recognized the need for a
+                dedicated platform where like-minded individuals could connect, collaborate, and push the boundaries of
+                creativity. What started as a small gathering of tech enthusiasts quickly grew into a thriving
+                community.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                Over the years, we've hosted countless workshops, hackathons, guest lectures, and project showcases,
+                contributing significantly to the innovative spirit of our college. We've seen our members go on to
+                achieve remarkable success in various fields, a testament to the strong foundation and supportive
+                environment we provide.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                Today, Ignite Innovators continues to evolve, embracing new technologies and methodologies to ensure our
+                members are always at the forefront of innovation. We remain committed to our core values of curiosity,
+                collaboration, and impact.
+            </p>
+        </section>
+
+        <section class="bg-primary-dark text-white p-8 rounded-xl shadow-lg my-12 text-center">
+            <h3 class="text-3xl font-bold mb-4">Join Our Journey!</h3>
+            <p class="text-lg opacity-90 mb-6">
+                We're always looking for passionate individuals to join our team and contribute to our mission. Whether
+                you're a seasoned innovator or just starting your journey, there's a place for you at Ignite Innovators.
+            </p>
+            <a href="contact.html"
+                class="inline-block px-8 py-3 mt-4 text-lg font-bold rounded-full shadow-lg transition-all duration-300 ease-in-out bg-secondary-light text-primary-dark hover:scale-105 hover:shadow-2xl">
+                Connect With Us
+            </a>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-8 mt-12 rounded-t-lg">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Ignite Innovators. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="hover:text-accent-light transition duration-300">Facebook</a>
+                <a href="#" class="hover:text-accent-light transition duration-300">Twitter</a>
+                <a href="#" class="hover:text-accent-light transition duration-300">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script>
+        // Mobile menu toggle functionality
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
