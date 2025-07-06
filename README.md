@@ -24,7 +24,8 @@ The site is built purely with HTML5 and CSS3, following modern design practices 
 
 ---
 # See it Live
-Live using github https://anant8521.github.io/college-club/
+- Live using github      https://anant8521.github.io/college-club/
+- Live using vercel app https://college-club-one.vercel.app/
 
 ## 📷 Screenshots
 
